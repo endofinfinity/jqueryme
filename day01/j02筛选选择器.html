@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>筛选选择器</title>
+    <script src="./jquery.min.js"></script>
+</head>
+<body>
+    <ul>
+        <li>多个里面筛选几个</li>
+        <li>多个里面筛选几个</li>
+        <li>多个里面筛选几个</li>
+        <li>多个里面筛选几个</li>
+        <li>多个里面筛选几个</li>
+        <li>多个里面筛选几个
+            
+        </li>
+        <div>
+            <li>内层li</li>
+        </div>
+    </ul>
+    <ol>
+        <li>多个里面筛选几个</li>
+        <li>多个里面筛选几个</li>
+        <li>多个里面筛选几个</li>
+        <li>多个里面筛选几个</li>
+        <li>多个里面筛选几个</li>
+        <li>多个里面筛选几个</li>
+    </ol>
+    <script>
+        $(function(){
+            $("ul li:first").css("color","red")
+            $("ul li:eq(3)").css("color","green")
+            // 偶数odd
+            $("ol li:odd").css("color","pink")
+            // 奇数even
+            $("ol li:even").css("color","blue")
+
+            $("ul").children("li").css("color","gray")
+            $("ul").find("li").css("color","blue")
+            
+
+        })
+    </script>
+</body>
+</html>
