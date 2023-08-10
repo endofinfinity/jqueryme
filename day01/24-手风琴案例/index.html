@@ -65,12 +65,13 @@
             border-radius: 5px;
         }
     </style>
+    <script src="js/jquery.min.js"></script>
 
 </head>
 
 <body>
-    <script src="js/jquery.min.js"></script>
-    <script type="text/javascript">
+    
+    <!-- <script type="text/javascript">
         $(function() {
             // 鼠标经过某个小li 有两步操作：
             $(".king li").mouseenter(function() {
@@ -87,7 +88,7 @@
 
 
         });
-    </script>
+    </script> -->
     <div class="king">
         <ul>
             <li class="current">
@@ -138,7 +139,19 @@
 
 
 
-
+    <script>
+        $(function () {  
+            $(".king li").mouseenter(function () {  
+                $(this).stop().animate({
+                    width:224
+                }).find(".big").stop().fadeIn().siblings(".small").stop().fadeOut()
+                // 排他
+                $(this).siblings("li").stop().animate({
+                    width:69
+                }).find(".big").stop().fadeOut().siblings(".small").stop().fadeIn()
+            })
+        })
+    </script>
 </body>
 
 </html>
